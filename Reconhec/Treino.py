@@ -40,5 +40,5 @@ IDs, Rostos = ImagemID()
 #print(IDs)
 
 Eigenface.train(Rostos, IDs)                    #Passa os rostos e IDs para o algoritmo Eigenface treinar
-Eigenface.write('classifiacadoreign.yml')       #Pós treino Eigenface salva o aprendizado no arquivo YML
+Eigenface.write('classifiacadoreign.xml')       #Pós treino Eigenface salva o aprendizado no arquivo YML
 print("fim")

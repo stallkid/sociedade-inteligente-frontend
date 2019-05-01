@@ -5,8 +5,8 @@ import Funcoes
 
 
 
-camera = cv2.VideoCapture('http://100.105.82.168:3128/video')    #Chama a camera ZERO indica a camera principal
-#camera = cv2.VideoCapture(0)    #Chama a camera ZERO indica a camera principal
+#camera = cv2.VideoCapture('http://192.168.43.186:8080/video')    #Chama a camera ZERO indica a camera principal
+camera = cv2.VideoCapture(0)    #Chama a camera ZERO indica a camera principal
 
 Casc_olho = cv2.CascadeClassifier('haarcascade_eye.xml')                    #XML indentificador de olhos
 Casc_face = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')    #XML indentificador de face
@@ -26,7 +26,7 @@ while(Contador < 50):
     faces = Casc_face.detectMultiScale(frame_cinza, scaleFactor=1.25, minNeighbors=5) ## frame, redução da imagem 1.5 = 50%,
 
 
-    if np.average(frame_cinza) > 110:  ## minimo de janelas para considerar a ser uma face
+    if np.average(frame_cinza) > 110:  ## minimo  para considerar a ser uma face
         for (x, y, w, h) in (faces):
             print(x, y, w, h)
             cv2.rectangle(frame, (x ,y), ((x+w), (y+h)), (255, 0, 0), 3)     #Cria pinta um retangulo no rosto
